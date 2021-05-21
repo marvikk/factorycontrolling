@@ -26,7 +26,15 @@ app.get('/', (req, res) => {
 
 app.post('/item/add', (req, res) => {
   const newItem = new Item({
-    name: req.body.name
+    name: "chicken"
+  });
+
+  newItem.save().then(item => res.redirect('/'));
+});
+
+app.post('/item/add/chicken', (req, res) => {
+  const newItem = new Item({
+    name: "chicken"
   });
 
   newItem.save().then(item => res.redirect('/'));
