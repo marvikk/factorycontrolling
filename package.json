@@ -12,6 +12,8 @@
   "dependencies": {
     "ejs": "^2.6.1",
     "express": "^4.16.3",
-    "mongoose": "^5.2.7"
+    "moment": "^2.29.1",
+    "mongoose": "^5.2.7",
+    "socket.io": "^4.1.2"
   }
 }

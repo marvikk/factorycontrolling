@@ -1,11 +1,20 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const http = require('http');
+const socketio = require('socket.io');
 
 const app = express();
+const server = http.createServer(app);
+const io = socketio(server);
 
 app.set('view engine', 'ejs');
-
 app.use(express.urlencoded({ extended: false }));
+
+// Sockets
+
+io.on('connection', socket => {
+  console.log('socket connected');
+})
 
 // Connect to MongoDB
 mongoose
